@@ -1,13 +1,14 @@
 //
-//  EssentialFeedTests.swift
-//  EssentialFeedTests
+//  EssentialFeedModuleTests.swift
+//  EssentialFeedModuleTests
 //
-//  Created by Hiram Castro on 03/02/22.
+//  Created by Hiram Castro on 07/02/22.
 //
 
 import XCTest
+@testable import EssentialFeedModule
 
-class EssentialFeedTests: XCTestCase {
+class EssentialFeedModuleTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -24,7 +25,7 @@ class EssentialFeedTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

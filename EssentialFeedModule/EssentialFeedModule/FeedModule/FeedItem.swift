@@ -1,8 +1,8 @@
 //
 //  FeedItem.swift
-//  EssentialFeed
+//  EssentialFeedModule
 //
-//  Created by Hiram Castro on 03/02/22.
+//  Created by Hiram Castro on 07/02/22.
 //
 
 import Foundation
