@@ -45,7 +45,6 @@ class RemoteFeedLoaderTests: XCTestCase {
         var requestedURLs = [URL]()
         
         func get(from url: URL) {
-            self.requestedURL = url
             self.requestedURLs.append(url)
         }
     }
