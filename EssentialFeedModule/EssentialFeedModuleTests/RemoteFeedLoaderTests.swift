@@ -101,6 +101,15 @@ class RemoteFeedLoaderTests: XCTestCase {
             "location":item2.location,
             "image": item2.imageURL.absoluteString
         ]
+        
+        let itemsJSON = [
+            "items": [item1JSON, item2JSON]
+        ]
+        
+        expect(sut, toCompleteWith: .success([item1, item2])) {
+            let json = try! JSONSerialization.data(withJSONObject: itemsJSON)
+            client.complete(withStatusCode: 200, data: json)
+        }
     }
     
     
