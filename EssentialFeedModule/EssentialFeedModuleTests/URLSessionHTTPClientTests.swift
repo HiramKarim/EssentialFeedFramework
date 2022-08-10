@@ -25,11 +25,15 @@ class URLSessionHTTPClient {
         self.session = session
     }
     
+    struct UnexpectedValuesRepresentation:Error { }
+    
     func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
         //let url = URL(string: "http:wrong-url.com")!
         session.dataTask(with: url) { _, _, error in
             if let error = error {
                 completion(.failure(error))
+            } else {
+                completion(.failure(UnexpectedValuesRepresentation()))
             }
         }.resume()
     }
@@ -74,6 +78,25 @@ class URLSessionHTTPClientTests: XCTestCase {
             switch result {
              case let .failure(receivedError as NSError):
                 XCTAssertEqual(receivedError, error)
+            default:
+                XCTFail("Error")
+            }
+            
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_getFromURL_failsOnAllNilError() {
+        URLProtocolStub.stub(data: nil, response: nil, error: nil)
+                
+        let exp = expectation(description: "wait for completion")
+        
+        makeSUT().get(from: makeURL()) { result in
+            switch result {
+             case .failure:
+                break
             default:
                 XCTFail("Error")
             }
