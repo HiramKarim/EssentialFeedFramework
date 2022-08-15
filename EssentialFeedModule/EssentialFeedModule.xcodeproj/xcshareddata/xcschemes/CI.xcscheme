@@ -26,15 +26,38 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1FA650F927B1D91D00CF6A29"
+            BuildableName = "EssentialFeedModule.framework"
+            BlueprintName = "EssentialFeedModule"
+            ReferencedContainer = "container:EssentialFeedModule.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1FA6510327B1D91D00CF6A29"
                BuildableName = "EssentialFeedModuleTests.xctest"
                BlueprintName = "EssentialFeedModuleTests"
+               ReferencedContainer = "container:EssentialFeedModule.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1FDA720428AAD86400C256C1"
+               BuildableName = "EssentialFeedModuleEndToEndTests.xctest"
+               BlueprintName = "EssentialFeedModuleEndToEndTests"
                ReferencedContainer = "container:EssentialFeedModule.xcodeproj">
             </BuildableReference>
          </TestableReference>
