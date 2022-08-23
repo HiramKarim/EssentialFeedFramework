@@ -201,7 +201,7 @@ class URLSessionHTTPClientTests: XCTestCase {
             
             if let requestObserver = URLProtocolStub.requestObserver {
                 client?.urlProtocolDidFinishLoading(self)
-                return requestObserver(request)
+                return requestObserver (request)
             }
             
             if let data = URLProtocolStub.stub?.data {
